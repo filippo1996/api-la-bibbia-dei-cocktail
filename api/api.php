@@ -1,4 +1,10 @@
 <?php
+//Set error warning in ErrorException
+set_error_handler(
+    function($severity, $message, $file, $line) {
+        throw new ErrorException($message, $severity, $severity, $file, $line);
+    }
+);
 
 $filter = file_get_contents('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail');
 if(!empty($_GET['word'])){
@@ -7,8 +13,15 @@ if(!empty($_GET['word'])){
 
 $apiObj = json_decode($filter);
 
+$_GET['shop'] ??= null;
 
-$string_data = file_get_contents(__DIR__.'/../shops/'.$_GET['shop'].'.txt');
+try{
+    $string_data = file_get_contents(__DIR__.'/../shops/'.$_GET['shop'].'.txt');
+} catch(Exception $e){
+    echo $e->getMessage();
+    exit;
+}
+
 $shop = unserialize($string_data);
 
 $apiFilter = [];
