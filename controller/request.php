@@ -24,4 +24,3 @@ $fp = fopen(__DIR__."/../shops/$pubName.txt","wb");
 
 fwrite($fp, serialize($filteredArray));
 fclose($fp);
-aaaaaaaa
