@@ -8,7 +8,7 @@
       <!-- link boostrap -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
       <!-- link css -->
-      <link rel="stylesheet" href="form-validation.css">
+      <link rel="stylesheet" href="css/form-validation.css">
       <title>Cocktail form</title>
   </head>
 
@@ -73,11 +73,11 @@
           <!-- <div class="col-md-7 col-lg-8"> -->
 
           <div class="col-md-12 col-lg-12">
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" action="request.php" method="get">
               <div class="row g-3">
                 <div class="col-sm-12">
                   <label for="firstName" class="form-label">Nome locale</label>
-                  <input type="text" class="form-control" id="firstName" placeholder="Inserire nome locale qui" value="" required="">
+                  <input type="text" name="pubName" class="form-control" id="firstName" placeholder="Inserire nome locale qui" value="" required >
                   <div class="invalid-feedback">
                     Nome locale richiesto.
                   </div>
@@ -87,13 +87,13 @@
 
                 <div class="col-sm-6 cerca">
                   <label for="lastName" class="form-label">Cerca cocktail</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="Nome cocktail" value="" required="">
+                  <input type="text" name="cocktailName" class="form-control" id="lastName" placeholder="Nome cocktail" value="" required="">
                   <button class="btn btn-primary btn-lg" type="submit">Cerca</button>
                 </div>
               
                 <div class="col-sm-6">
                   <label for="lastName" class="form-label">Prezzo per ogni cocktail</label>
-                  <input type="text" class="form-control" id="lastName" placeholder="€" value="" required="">
+                  <input type="number" name="price" class="form-control" id="lastName" placeholder="€" value="" required="">
                 </div>
               
 
@@ -111,11 +111,7 @@
       </footer>
     </div>
   
-  
-    <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-  
-    <script src="form-validation.js"></script>
-    
+    <script src="js/form-validation.js"></script>
   
   </body>
 
